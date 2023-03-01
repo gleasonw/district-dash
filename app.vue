@@ -1,3 +1,12 @@
+<script lang="ts">
+
+async function loadCSVtoPrisma() {
+
+}
+
+loadCSVtoPrisma();
+</script>
+
 <script setup lang="ts">
 import { ref, onMounted, watch } from "vue";
 const selected_district = ref(0);

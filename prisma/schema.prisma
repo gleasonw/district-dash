@@ -1,0 +1,126 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model School {
+  X                Float
+  Y                Float
+  OBJECTID         Int      @id
+  NCESSCH          Int
+  SURVYEAR         String
+  STABR            String
+  DISTRICT         District @relation(fields: [LEAID], references: [LEAID])
+  LEAID            Int
+  ST_LEAID         String
+  LEA_NAME         String
+  SCH_NAME         String
+  LSTREET1         String
+  LSTREET2         String
+  LCITY            String
+  LSTATE           String
+  LZIP             Int
+  LZIP4            Int
+  PHONE            String
+  GSLO             String
+  GSHI             String
+  VIRTUAL          String
+  TOTFRL           Int
+  FRELCH           Int
+  REDLCH           Int
+  PK               Int
+  KG               Int
+  G01              Int
+  G02              Int
+  G03              Int
+  G04              Int
+  G05              Int
+  G06              Int
+  G07              Int
+  G08              Int
+  G09              Int
+  G10              Int
+  G11              Int
+  G12              Int
+  G13              Int
+  TOTAL            Int
+  MEMBER           Int
+  AM               Int
+  HI               Int
+  BL               Int
+  WH               Int
+  HP               Int
+  TR               Int
+  FTE              Float
+  LATCOD           Float
+  LONCOD           Float
+  ULOCALE          String
+  NMCNTY           String
+  STUTERATIO       Float
+  TITLEI           String
+  STITLEI          String
+  AMALM            Int
+  AMALF            Int
+  ASALM            Int
+  ASALF            Int
+  HIALM            Int
+  HIALF            Int
+  BLALM            Int
+  BLALF            Int
+  WHALM            Int
+  WHALF            Int
+  HPALM            Int
+  HPALF            Int
+  TRALM            Int
+  TRALF            Int
+  TOTMENROL        Int
+  TOTFENROL        Int
+  STATUS           Int
+  UG               String
+  AE               String
+  SCHOOL_TYPE_TEXT String
+  SY_STATUS_TEXT   String
+  SCHOOL_LEVEL     String
+  AS               Int
+  CHARTER_TEXT     Boolean
+  MAGNET_TEXT      Boolean
+}
+
+model District {
+  OBJECTID       Int      @id
+  SURVYEAR       String
+  STABR          String
+  STATENAME      String
+  LEAID          Int      @unique
+  ST_LEAID       String
+  LEA_NAME       String
+  LSTREET1       String
+  LSTREET2       String
+  LCITY          String
+  LSTATE         String
+  LZIP           Int
+  LZIP4          Int
+  LEA_TYPE_TEXT  String
+  LEA_TYPE       Int
+  GSLO           String
+  GSHI           Int
+  SY_STATUS_TEXT String
+  SCH            Int
+  TOTTCH         Int
+  STUTERATIO     Float
+  LOCALE         Int
+  LOCALE_TEXT    String
+  CONAME         String
+  COID           Int
+  PHONE          String
+  Lat            Float
+  Long           Float
+  MEMBER         Int
+  Shape__Area    Float
+  Shape__Length  Float
+  Schools        School[]
+}

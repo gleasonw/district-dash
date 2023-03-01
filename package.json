@@ -8,9 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.2.3"
+    "nuxt": "^3.2.3",
+    "prisma": "^4.11.0"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.4.1"
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "@prisma/client": "^4.11.0",
+    "csv-parser": "^3.0.0",
+    "fs": "^0.0.1-security"
   }
 }
