@@ -8,13 +8,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.2.3",
-    "prisma": "^4.11.0"
+    "@types/pg": "^8.6.6",
+    "nuxt": "^3.2.3"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.4.1",
-    "@prisma/client": "^4.11.0",
+    "@trpc/client": "^10.13.2",
+    "@trpc/server": "^10.13.2",
     "csv-parser": "^3.0.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "pg": "^8.9.0",
+    "trpc-nuxt": "^0.7.0",
+    "zod": "^3.20.6"
   }
 }
