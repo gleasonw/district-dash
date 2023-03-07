@@ -1,15 +1,24 @@
 <script setup lang="ts">
-import { District } from '~~/models';
+import { District, School } from '~~/models';
 
 const selected_district = ref(0);
 const districtInput = ref("");
+const schoolInput = ref("");
 
-const query = computed(() => ({
+const districtQuery = computed(() => ({
     name: districtInput.value,
 }));
 
+const schoolQuery = computed(() => ({
+    name: schoolInput.value,
+}));
+
 const { data: districts } = useFetch<District[]>("/api/districts", {
-    query: query
+    query: districtQuery
+});
+
+const { data: schools } = useFetch<School[]>("/api/schools", {
+    query: schoolQuery
 });
 
 </script>
@@ -23,6 +32,9 @@ const { data: districts } = useFetch<District[]>("/api/districts", {
                 {{ district.LEA_NAME }}
             </li>
         </div>
-        <input class="border-black border-2 border-b-4 p-3 rounded-lg" />
+        <input v-model="schoolInput" class="border-black border-2 border-b-4 p-3 rounded-lg" />
+        <li v-for="school in schools" :key="school.OBJECTID">
+            {{ school.SCH_NAME }}
+        </li>
     </div>
 </template>
