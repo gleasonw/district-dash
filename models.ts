@@ -1,7 +1,7 @@
-export interface NCESDistrictFeatureAttributes {
+export interface District {
   OBJECTID: number;
   LEAID: string;
-  NAME: string;
+  LEA_NAME: string;
   OPSTFIPS: string;
   LSTREE: string;
   LCITY: string;
@@ -23,12 +23,4 @@ export interface NCESDistrictFeatureAttributes {
   CD15: string;
   SLDL15: string;
   SLDU15: string;
-}
-
-export interface NCESDistrictFeature {
-  attributes?: NCESDistrictFeatureAttributes;
-  geometry?: {
-    x: number;
-    y: number;
-  };
 }
